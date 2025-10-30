@@ -22,18 +22,12 @@ public class ProdutoService {
 
         return produtoRepository.findBySku(sku)
                 .orElseThrow(() -> new RuntimeException("SKU não encontrado"));
-
-
     }
 
-    public void deletarProdutoPorSku (String sku) {
-        produtoRepository.deleteBySku(sku);
-    }
+    public void atualizarProduto (String sku, Produto produto) {
 
-    public void atualizarProduto (Integer id, Produto produto) {
-
-        Produto produtoEntity = produtoRepository.findById(id).orElseThrow(() ->
-            new RuntimeException("Usuario não encontrado"));
+        Produto produtoEntity = produtoRepository.findBySku(sku).orElseThrow(() ->
+                new RuntimeException("SKU não encontrado"));
         Produto produtoAtualizado = Produto.builder()
                 .nome(produto.getNome() != null ? produto.getNome() :
                         produtoEntity.getNome())
@@ -47,6 +41,9 @@ public class ProdutoService {
 
     }
 
+    public void deletarProdutoPorSku (String sku) {
+        produtoRepository.deleteBySku(sku);
+    }
 
 
 }
