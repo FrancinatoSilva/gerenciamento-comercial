@@ -15,7 +15,7 @@
 <summary>Table of Contents</summary>
 
 - [⚙ Funcionalidades](#funcoes)
-    - [Como Executar](#started)
+    - [Como Executar](#starting)
     - [Pré-requisitos](#prerequisites)
     - [Clone](#cloning)
     - [Starting](#starting)
@@ -37,7 +37,7 @@ H2 em memória para facilitar os testes e o desenvolvimento.</b>
 
 **Gerenciamento de Produtos:** API completa para Criar, Ler, Atualizar e Deletar (CRUD) produtos, utilizando o SKU como identificador único.
 
-<h2 id="starting">🚀 Como Executar</h2>
+<h2 id = "starting"> 🚀 Como Executar</h2>
 
 <h3 id = "prerequisites"> Pré-requisitos</h3>
 
