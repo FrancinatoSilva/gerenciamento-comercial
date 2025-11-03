@@ -39,6 +39,7 @@ public class ProdutoService {
                 .sku(produtoEntity.getSku())
                 .build();
 
+        produtoRepository.saveAndFlush(produtoAtualizado);
     }
 
     public void deletarProdutoPorSku (String sku) {

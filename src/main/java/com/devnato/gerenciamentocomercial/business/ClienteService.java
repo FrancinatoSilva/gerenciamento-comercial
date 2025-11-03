@@ -25,12 +25,15 @@ public class ClienteService {
     public void atualizarCliente(Integer id, Cliente cliente) {
         Cliente clienteEntity = clienteRepository.findById(id).orElseThrow(() ->
                 new RuntimeException("Usuario não encontrado"));
-        Cliente usuarioAtualizado = Cliente.builder()
+        Cliente clienteAtualizado = Cliente.builder()
                 .nome(cliente.getNome() != null ? cliente.getNome() :
                         clienteEntity.getNome())
                 .email(cliente.getEmail() != null ? cliente.getEmail() :
-                        clienteEntity.getNome())
+                        clienteEntity.getEmail())
+                .id(clienteEntity.getId())
                 .build();
+
+        clienteRepository.saveAndFlush(clienteAtualizado);
     }
 
     public void deletarClientePorId(Integer id) {
